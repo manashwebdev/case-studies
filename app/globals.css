@@ -16,13 +16,5 @@
 @layer components {
   .wrap { @apply mx-auto w-full max-w-[1120px] px-6; }
   .label { @apply font-mono text-[12px] font-medium uppercase text-muted md:text-[13px]; letter-spacing: 0.04em; }
-  .btn {
-    @apply inline-flex min-h-[48px] items-center justify-center px-6 py-3 font-mono text-sm font-medium;
-    text-decoration: none;
-  }
-  .btn-black { @apply bg-ink text-white hover:bg-accent; }
-  .btn-red { @apply bg-accent text-white hover:bg-ink; }
-  .btn-outline { @apply border-2 border-ink bg-white text-ink hover:bg-ink hover:text-white; }
-  .btn-ph { @apply border border-dashed border-accent bg-white text-ink; }
   .ph { @apply text-accent; border-bottom: 1px dashed #D42E22; }
 }

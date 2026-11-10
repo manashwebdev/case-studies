@@ -9,17 +9,18 @@ type Props = {
 };
 
 export function Button({ href, variant = "black", children }: Props) {
-  // Full class names must appear in the source so Tailwind does not remove them.
+  const base =
+    "inline-flex min-h-[48px] items-center justify-center px-6 py-3 font-mono text-sm font-medium";
   const styles = {
-    black: "btn btn-black",
-    red: "btn btn-red",
-    outline: "btn btn-outline",
+    black: "bg-ink text-white hover:bg-accent",
+    red: "bg-accent text-white hover:bg-ink",
+    outline: "border-2 border-ink bg-white text-ink hover:bg-ink hover:text-white",
   };
-  const cls = styles[variant];
+  const cls = `${base} ${styles[variant]}`;
 
   if (isPlaceholder(href)) {
     return (
-      <span className="btn btn-ph">
+      <span className={`${base} border border-dashed border-accent bg-white text-ink`}>
         {children}&nbsp;<Val>{href}</Val>
       </span>
     );
