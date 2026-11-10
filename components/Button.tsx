@@ -9,7 +9,13 @@ type Props = {
 };
 
 export function Button({ href, variant = "black", children }: Props) {
-  const cls = `btn btn-${variant}`;
+  // Full class names must appear in the source so Tailwind does not remove them.
+  const styles = {
+    black: "btn btn-black",
+    red: "btn btn-red",
+    outline: "btn btn-outline",
+  };
+  const cls = styles[variant];
 
   if (isPlaceholder(href)) {
     return (
